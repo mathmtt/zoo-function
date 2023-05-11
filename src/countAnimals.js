@@ -9,11 +9,17 @@ const countAnimals = (animal) => {
     }
     ), {});
   }
-  if (!animal.sex) {
-    return data.species.find((especie) => especie.name === animal.especie).residents.length;
+  const findSpecie = data.species.find((especie) => especie.name === animal.species);
+  if (animal.species && animal.sex) {
+    const sexAnimale = findSpecie.residents.filter((especie) => especie.sex === animal.sex);
+    return sexAnimale.length;
   }
-  return data.species.find((especie) => especie.name === animal.especie).residents
-    .filter((residentA) => residentA.sex === animal.sex).length;
+  return findSpecie.residents.length;
 };
-
+// Primeira tentativa
+// if (!animal.sex) {
+//   return data.species.find((especie) => especie.name === animal.especie).residents.length;
+// }
+// return data.species.find((especie) => especie.name === animal.especie).residents
+//   .filter((findSpecie) => findSpecie.sex === animal.sex).length;
 module.exports = countAnimals;
