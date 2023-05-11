@@ -21,5 +21,5 @@ const countAnimals = (animal) => {
 //   return data.species.find((especie) => especie.name === animal.especie).residents.length;
 // }
 // return data.species.find((especie) => especie.name === animal.especie).residents
-//   .filter((findSpecie) => findSpecie.sex === animal.sex).length;
+//   .filter((findSpecie) => findSpecie.sex === animal.sex).length;;
 module.exports = countAnimals;
