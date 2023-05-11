@@ -36,4 +36,10 @@ describe('Testes da função HandlerElephants', () => {
     const esperado = undefined;
     expect(momento).toEqual(esperado);
   });
+  it('Oitavo Teste', () => {
+    expect(handlerElephants(0)).toBe('Parâmetro inválido, é necessário uma string');
+  });
+  it('Nono Teste', () => {
+    expect(handlerElephants('invalid')).toBeNull();
+  });
 });
