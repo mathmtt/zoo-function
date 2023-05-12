@@ -28,4 +28,39 @@ describe('Testes da função getOpeningHours', () => {
     const esperado = aberto;
     expect(momento).toEqual(esperado);
   });
+  it('Sexto Teste', () => {
+    const momento = getOpeningHours('Thursday', '05:23-AM');
+    const esperado = fechado;
+    expect(momento).toEqual(esperado);
+  });
+  it('Setimo Teste', () => {
+    const momento = getOpeningHours('Friday', '11:23-AM');
+    const esperado = aberto;
+    expect(momento).toEqual(esperado);
+  });
+  it('Oitavo Teste', () => {
+    const momento = getOpeningHours('Friday', '05:23-AM');
+    const esperado = fechado;
+    expect(momento).toEqual(esperado);
+  });
+  it('Nono Teste', () => {
+    const momento = getOpeningHours('Saturday', '09:23-AM');
+    const esperado = aberto;
+    expect(momento).toEqual(esperado);
+  });
+  it('Decimo Teste', () => {
+    const momento = getOpeningHours('Saturday', '05:23-AM');
+    const esperado = fechado;
+    expect(momento).toEqual(esperado);
+  });
+  it('Decimo Primeiro Teste', () => {
+    const momento = getOpeningHours('Sunday', '09:23-AM');
+    const esperado = aberto;
+    expect(momento).toEqual(esperado);
+  });
+  it('Decimo Segundo Teste', () => {
+    const momento = getOpeningHours('Sunday', '05:23-AM');
+    const esperado = fechado;
+    expect(momento).toEqual(esperado);
+  });
 });
