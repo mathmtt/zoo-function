@@ -19,7 +19,7 @@ const acharFS = (objeto) => {
       .species.find((especie) => id === especie.id).location),
   };
   return nameE;
-}
+};
 
 const getEmployeesCoverage = (objeto) => {
   // seu código aqui
