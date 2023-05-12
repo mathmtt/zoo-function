@@ -63,4 +63,29 @@ describe('Testes da função getOpeningHours', () => {
     const esperado = fechado;
     expect(momento).toEqual(esperado);
   });
+  it('Decimo Terceiro Teste', () => {
+    const momento = (getOpeningHours('Sunday', 'INVALIDO'));
+    const esperado = 'The hour must be between 0 and 12';
+    expect(momento).toEqual(esperado);
+  });
+  it('Decimo Quarto Teste', () => {
+    const momento = (getOpeningHours('INVALIDO', '08:45-AM'));
+    const esperado = 'The day must be valid. Example: Monday';
+    expect(momento).toEqual(esperado);
+  });
+  it('Decimo Quinto Teste', () => {
+    const momento = (getOpeningHours('INVALIDO', '08:45-AM'));
+    const esperado = 'The day must be valid. Example: Monday';
+    expect(momento).toThrow(esperado);
+  });
+  it('Decimo Sexto Teste', () => {
+    const momento = (getOpeningHours('Sunday', '12:92-PM'));
+    const esperado = 'The minutes must be between 0 and 59';
+    expect(momento).toThrow(esperado);
+  });
+  it('Decimo Setimo Teste', () => {
+    const momento = (getOpeningHours('Sunday', '11:30-XJ'));
+    const esperado = 'The abbreviation must be \'AM\' or \'PM\'';
+    expect(momento).toThrow(esperado);
+  });
 });
